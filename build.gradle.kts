@@ -19,7 +19,6 @@ repositories {
 
 dependencies {
     implementation("de.treichels.hott:hott-serial:_")
-    implementation("de.treichels.hott:hott-model:_")
     implementation("com.fazecast:jSerialComm:_")
 }
 
