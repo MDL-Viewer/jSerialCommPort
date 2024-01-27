@@ -29,6 +29,13 @@ semver {
 version = semver.version
 
 tasks {
+    compileJava {
+        options.compilerArgumentProviders.add(CommandLineArgumentProvider {
+            // Provide compiled Kotlin classes to javac – needed for Java/Kotlin mixed sources to work
+            listOf("--patch-module", "de.treichels.hott.serial.jserialcommport=${sourceSets["main"].output.asPath}")
+        })
+    }
+
     jar {
         manifest {
             attributes (
